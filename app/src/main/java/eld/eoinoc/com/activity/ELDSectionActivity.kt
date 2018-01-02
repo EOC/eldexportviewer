@@ -23,6 +23,7 @@ import eld.eoinoc.com.model.Category
 import eld.eoinoc.com.widget.TextSharedElementCallback
 import android.support.v4.view.ViewPager
 import eld.eoinoc.com.adapter.HeaderPagerAdapter
+import eld.eoinoc.com.adapter.SectionPagerAdapter
 import eld.eoinoc.com.fragment.OnFragmentInteractionListener
 
 
@@ -35,7 +36,9 @@ class ELDSectionActivity : OnFragmentInteractionListener, AppCompatActivity() {
     private lateinit var category: Category
 
     private var headerPagerAdapter: HeaderPagerAdapter? = null
+    private var sectionPagerAdapter: SectionPagerAdapter? = null
     private var viewPager: ViewPager? = null
+    private var sectionPager: ViewPager? = null
 
     private var icon: ImageView? = null
     private var toolbarBack: View? = null
@@ -101,24 +104,32 @@ class ELDSectionActivity : OnFragmentInteractionListener, AppCompatActivity() {
         setContentView(R.layout.activity_eldsection)
         val header  = driverData().headerSegment
         headerPagerAdapter = HeaderPagerAdapter(getSupportFragmentManager(), header)
+        sectionPagerAdapter = SectionPagerAdapter(getSupportFragmentManager(), driverData())
         viewPager = findViewById(R.id.headerPager)
         viewPager!!.adapter  = headerPagerAdapter
 
+        sectionPager = findViewById(R.id.sectionPager)
+        sectionPager!!.adapter = sectionPagerAdapter
 
         toolbarBack = findViewById<View>(R.id.back).apply { setOnClickListener(onClickListener) }
 
-        if (categoryId == "header") {
-            findViewById<View>(R.id.header_fragment_container).visibility = View.VISIBLE
+        findViewById<View>(R.id.fragment_container).visibility = View.VISIBLE
 
-            val driverName : TextView = findViewById<TextView>(R.id.driverName)
-            driverName.text = header?.getDriverFullname()
+        val driverName : TextView = findViewById<TextView>(R.id.driverName)
+        driverName.text = header?.getDriverFullname()
 
-            val licenceData : TextView = findViewById<TextView>(R.id.licenseInfo)
-            licenceData.text = header?.getLicenseInfo()
+        val licenceData : TextView = findViewById<TextView>(R.id.licenseInfo)
+        licenceData.text = header?.getLicenseInfo()
 
-            val eldUserName : TextView = findViewById<TextView>(R.id.eldUserName)
-            eldUserName.text = header?.eldUserName
+        val eldUserName : TextView = findViewById<TextView>(R.id.eldUserName)
+        eldUserName.text = header?.eldUserName
 
+        if (categoryId == "headers") {
+            findViewById<View>(R.id.headerPager).visibility = View.VISIBLE
+            findViewById<View>(R.id.sectionPager).visibility = View.GONE
+        } else {
+            findViewById<View>(R.id.headerPager).visibility = View.GONE
+            findViewById<View>(R.id.sectionPager).visibility = View.VISIBLE
         }
     }
 

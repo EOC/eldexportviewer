@@ -60,7 +60,7 @@
                 android:scaleX="0.7"
                 android:scaleY="0.7"/>
 
-            <FrameLayout android:id="@+id/header_fragment_container"
+            <FrameLayout android:id="@+id/fragment_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -113,6 +113,7 @@
                     <android.support.v4.view.ViewPager
                         xmlns:android="http://schemas.android.com/apk/res/android"
                         android:id="@+id/headerPager"
+                        android:visibility="visible"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <android.support.v4.view.PagerTitleStrip
@@ -126,8 +127,26 @@
                             android:paddingBottom="4dp" />
                     </android.support.v4.view.ViewPager>
 
+                    <android.support.v4.view.ViewPager
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/sectionPager"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <android.support.v4.view.PagerTitleStrip
+                            android:id="@+id/section_title_strip"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:background="#33b5e5"
+                            android:textColor="#fff"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp" />
+                    </android.support.v4.view.ViewPager>
+
                 </LinearLayout>
             </FrameLayout>
+
         </FrameLayout>
     </LinearLayout>
 </merge>
