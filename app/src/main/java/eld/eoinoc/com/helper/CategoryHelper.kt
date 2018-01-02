@@ -23,8 +23,16 @@ class CategoryHelper {
         return categories.first()
     }
 
+    fun getIndexOfCategoryForPager(categoryId: String): Int {
+        categories
+                .filter { it.id == categoryId }
+                .forEach { return categories.indexOf(it) - 1 }
+
+        return 0
+    }
+
     private fun loadCategories(): MutableList<Category> {
-        val sections = ArrayList<Category>(5)
+        val sections = ArrayList<Category>()
         sections.add(Category("Header Segment", "header", Theme.green))
         sections.add(Category("User List", "users", Theme.blue))
         sections.add(Category("CMV List", "cmvs", Theme.red))

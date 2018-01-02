@@ -88,6 +88,20 @@ class ELDSectionActivity : OnFragmentInteractionListener, AppCompatActivity() {
                 })
     }
 
+
+    override fun onResume() {
+        super.onResume()
+        var categoryId = intent.getStringExtra(Category.TAG)
+        if (categoryId == "header") {
+            findViewById<View>(R.id.headerPager).visibility = View.VISIBLE
+            findViewById<View>(R.id.sectionPager).visibility = View.GONE
+        } else {
+            findViewById<View>(R.id.headerPager).visibility = View.GONE
+            findViewById<View>(R.id.sectionPager).visibility = View.VISIBLE
+            sectionPager?.setCurrentItem(CategoryHelper().getIndexOfCategoryForPager(categoryId), false)
+        }
+    }
+
     @SuppressLint("NewApi")
     private fun populate(categoryId: String) {
         category = CategoryHelper().getCategoryWith(categoryId).also {
@@ -124,12 +138,13 @@ class ELDSectionActivity : OnFragmentInteractionListener, AppCompatActivity() {
         val eldUserName : TextView = findViewById<TextView>(R.id.eldUserName)
         eldUserName.text = header?.eldUserName
 
-        if (categoryId == "headers") {
+        if (categoryId == "header") {
             findViewById<View>(R.id.headerPager).visibility = View.VISIBLE
             findViewById<View>(R.id.sectionPager).visibility = View.GONE
         } else {
             findViewById<View>(R.id.headerPager).visibility = View.GONE
             findViewById<View>(R.id.sectionPager).visibility = View.VISIBLE
+            sectionPager?.setCurrentItem(CategoryHelper().getIndexOfCategoryForPager(categoryId), false)
         }
     }
 
@@ -156,6 +171,8 @@ class ELDSectionActivity : OnFragmentInteractionListener, AppCompatActivity() {
                 .alpha(0f)
                 .setInterpolator(interpolator)
                 .start()
+
+        super.onBackPressed()
 
     }
 
