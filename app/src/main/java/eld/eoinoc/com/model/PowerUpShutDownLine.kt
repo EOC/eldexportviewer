@@ -14,7 +14,7 @@ class PowerUpShutDownLine (val eventCode: String, val eventDate: String, val eve
         sb.append(formatEventDateTime(eventDate, eventTime)).append(", ")
         sb.append(formatVehicleMiles(vehicleMiles)).append(", ")
         sb.append(formatEngineHours(engineHours)).append(", ")
-        sb.append(latitude).append(", ").append(longitude)
+        sb.append(latitude).append(", ").append(longitude).append(", ")
         sb.append(cmvPowerUnitNumber).append(", ").append(cmvVIN)
         sb.append(trailers).append(", ").append(shippingDoc)
         return sb.toString()
