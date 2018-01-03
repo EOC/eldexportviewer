@@ -13,6 +13,7 @@ enum class ELDEventCodes(val eventTypeEventCodePair:Pair<String, String>, val ev
     PERSONAL(Pair("3","1"), "PERSONAL"),
     YARD(Pair("3","2"), "YARD"),
     CLEARED(Pair("3","0"), "PC/YD Cleared"),
+    CERTIFICATION(Pair("4",""), "Certification %s"),
     LOGIN(Pair("5","1"), "Login"),
     LOGOUT(Pair("5","2"), "Logout"),
     POWER_UP_REDUCED(Pair("6","1"), "Power Up"),
@@ -21,6 +22,7 @@ enum class ELDEventCodes(val eventTypeEventCodePair:Pair<String, String>, val ev
     POWER_DOWN_CONVENTIONAL(Pair("6","4"), "Power Down");
 
     companion object {
+        val CERTIFICATION_EVENT_TYPE = "4"
         val LOGIN_EVENT_TYPE = "5"
         val POWER_EVENT_TYPE = "6"
     }
