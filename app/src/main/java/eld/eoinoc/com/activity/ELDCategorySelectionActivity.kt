@@ -24,7 +24,7 @@ class ELDCategorySelectionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_eldcategory_selection)
         setUpToolbar()
-        if (savedInstanceState == null) {
+        if (savedInstanceState == null || !driverDataLoaded) {
             replaceFragment(R.id.category_container, SelectFileFragment())
         } else {
             replaceFragment(R.id.category_container, ELDCategorySelectionFragment())

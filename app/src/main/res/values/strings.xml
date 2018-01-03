@@ -6,5 +6,5 @@
     <string name="no_co_driver">No Co-Driver Data</string>
     <string name="header_segment">Header Segment</string>
     <string name="open_file">Open File</string>
-    <string name="select_file">Select File</string>
+    <string name="select_file">Tap the + to open a file and get started</string>
 </resources>
