@@ -1,7 +1,5 @@
 package eld.eoinoc.com.fragment.header
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -10,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 
 import eld.eoinoc.com.eld_export_fileviewer.R
-import eld.eoinoc.com.fragment.OnFragmentInteractionListener
 
 class ELDHeaderVehicle : Fragment() {
 

@@ -73,14 +73,6 @@ class HeaderSegment(
         this.eldAuthValue = eldAuthValue
     }
 
-    fun addComment(comment: String) {
-
-    }
-
-    fun isCoDriverAvailable(): Boolean {
-        return coDriverELDUserName != ""
-    }
-
     fun getCoDriverFullName(): String {
         return coDriverLastName + ", " + coDriverFirstName
     }

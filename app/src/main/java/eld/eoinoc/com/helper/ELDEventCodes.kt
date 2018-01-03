@@ -22,6 +22,7 @@ enum class ELDEventCodes(val eventTypeEventCodePair:Pair<String, String>, val ev
     POWER_DOWN_CONVENTIONAL(Pair("6","4"), "Power Down");
 
     companion object {
+        val DUTY_CHANGE_EVENT_TYPE = "1"
         val CERTIFICATION_EVENT_TYPE = "4"
         val LOGIN_EVENT_TYPE = "5"
         val POWER_EVENT_TYPE = "6"

@@ -3,7 +3,6 @@ package eld.eoinoc.com.activity
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
@@ -24,13 +23,12 @@ import eld.eoinoc.com.widget.TextSharedElementCallback
 import android.support.v4.view.ViewPager
 import eld.eoinoc.com.adapter.HeaderPagerAdapter
 import eld.eoinoc.com.adapter.SectionPagerAdapter
-import eld.eoinoc.com.fragment.OnFragmentInteractionListener
 
 
 /**
  * Created by eoinoc on 31/12/2017.
  */
-class ELDSectionActivity : OnFragmentInteractionListener, AppCompatActivity() {
+class ELDSectionActivity : AppCompatActivity() {
 
     private val interpolator: Interpolator = FastOutSlowInInterpolator()
     private lateinit var category: Category
@@ -174,10 +172,6 @@ class ELDSectionActivity : OnFragmentInteractionListener, AppCompatActivity() {
 
         super.onBackPressed()
 
-    }
-
-    override fun onFragmentInteraction(uri: Uri) {
-        //Don't do anything yet
     }
 
     companion object {

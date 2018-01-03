@@ -122,6 +122,9 @@
                         <android.support.v4.view.PagerTitleStrip
                             android:id="@+id/pager_title_strip"
                             style="@style/viewPagerTitleStrip"
+                            android:background="?colorPrimary"
+                            android:textColor="?android:textColorPrimary"
+                            android:textAppearance="@style/ELDViewer.TextAppearance.Title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="top"/>
@@ -136,6 +139,9 @@
                         <android.support.v4.view.PagerTitleStrip
                             android:id="@+id/section_title_strip"
                             style="@style/viewPagerTitleStrip"
+                            android:background="?colorPrimary"
+                            android:textColor="?android:textColorPrimary"
+                            android:textAppearance="@style/ELDViewer.TextAppearance.Title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="top"/>

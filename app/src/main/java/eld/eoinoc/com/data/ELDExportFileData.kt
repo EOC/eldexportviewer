@@ -2,6 +2,7 @@ package eld.eoinoc.com.data
 
 import android.content.Context
 import android.content.res.Resources
+import android.net.Uri
 import eld.eoinoc.com.eld_export_fileviewer.R
 import eld.eoinoc.com.model.*
 import java.io.InputStream
@@ -25,12 +26,11 @@ class ELDExportFileData private constructor(
     var powerUpEvents: ArrayList<ListLine> = ArrayList()
     var unidentifiedDrivingEvents: ArrayList<ListLine> = ArrayList()
 
-    init {
-        readExportFile()
+    private fun readDemoExportFile() {
+        readExportFile(resources.openRawResource(R.raw.demo_export))
     }
 
-    private fun readExportFile() {
-        val inputStream: InputStream = resources.openRawResource(R.raw.demo_export)
+    fun readExportFile(inputStream: InputStream) {
         val lineList = mutableListOf<String>()
 
         inputStream.bufferedReader().useLines { lines -> lines.forEach { lineList.add(it)} }

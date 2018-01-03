@@ -11,7 +11,7 @@
         tools:ignore="Overdraw,UnusedAttribute">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar_player"
+            android:id="@+id/toolbar_viewer"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
             style="@style/ELDViewer.TextAppearance.Title"

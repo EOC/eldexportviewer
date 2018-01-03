@@ -6,7 +6,10 @@ package eld.eoinoc.com.model
 class CMVListLine(val powerUnitNumber: String, val vin: String) : ListLine {
     override fun formatLine(): String {
         val sb = StringBuilder()
-        sb.append(powerUnitNumber).append(", ").append(vin)
+        sb.append(powerUnitNumber)
+        if(vin.isNotBlank()) {
+            sb.append(", ").append(vin)
+        }
         return sb.toString()
     }
 }
