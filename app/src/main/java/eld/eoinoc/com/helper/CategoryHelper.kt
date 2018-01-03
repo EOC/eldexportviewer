@@ -38,10 +38,10 @@ class CategoryHelper {
         sections.add(Category("CMV List", "cmvs", Theme.red))
         sections.add(Category("Event List", "events", Theme.yellow))
         sections.add(Category("Comments", "comments", Theme.purple))
-        sections.add(Category("Certification/Recertification", "certification", Theme.topeka))
-        sections.add(Category("Malfunctions/Data Diagnostic", "malfunctions", Theme.green))
+        sections.add(Category("Certification", "certification", Theme.topeka))
+        sections.add(Category("Malfunctions", "malfunctions", Theme.green))
         sections.add(Category("Login/Logout", "logins", Theme.blue))
-        sections.add(Category("Engine Power Up/Shut Down", "engine", Theme.red))
+        sections.add(Category("Power Up/Down", "engine", Theme.red))
         sections.add(Category("Unidentified Driver", "unidentified", Theme.yellow))
         return sections
     }

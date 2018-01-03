@@ -40,6 +40,14 @@
         <item name="android:textSize">@dimen/category_item_text_size</item>
     </style>
 
+    <style name="ELDViewer.TextAppearance.DriverDetails.large" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">@dimen/driverdetails_item_text_size</item>
+    </style>
+
+    <style name="ELDViewer.TextAppearance.DriverDetails.medium" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textSize">@dimen/license_item_text_size</item>
+    </style>
+
     <style name="ELDViewer.TextAppearance.Title" parent="TextAppearance.AppCompat.Title">
         <item name="android:textColor">@color/viewer_primary</item>
     </style>

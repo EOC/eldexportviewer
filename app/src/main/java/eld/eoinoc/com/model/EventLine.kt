@@ -1,5 +1,8 @@
 package eld.eoinoc.com.model
 
+import eld.eoinoc.com.helper.formatEventDateTime
+import eld.eoinoc.com.helper.getEventType
+
 /**
  * Created by eoinoc on 02/01/2018.
  */
@@ -8,8 +11,8 @@ class EventLine (val recordStatus: String, val recordOrigin: String, val eventTy
                  val cmvOrderNum: String, malfunctionIndicatorStatus: String, dataDiagnosticEventIndicatorStatus: String) : ListLine {
     override fun formatLine(): String {
         val sb = StringBuilder()
-        sb.append(eventCode).append(", ")
-        sb.append(eventDate).append(", ").append(eventTime)
+        sb.append(getEventType(eventType, eventCode)).append(", ")
+        sb.append(formatEventDateTime(eventDate, eventTime))
         return sb.toString()
     }
 }

@@ -11,6 +11,11 @@
     <dimen name="size_fab">56dp</dimen>
     <dimen name="elevation_header">4dp</dimen>
 
-    <dimen name="category_item_text_size">14sp</dimen>
+    <dimen name="category_item_text_size">20sp</dimen>
+    <dimen name="category_item_text_padding">10dp</dimen>
+
+    <dimen name="driverdetails_item_text_size">22sp</dimen>
+    <dimen name="license_item_text_size">18sp</dimen>
+
     <dimen name="text_margin">16dp</dimen>
 </resources>

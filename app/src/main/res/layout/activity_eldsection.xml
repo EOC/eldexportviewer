@@ -93,18 +93,21 @@
                                 android:id="@+id/driverName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:textAppearance="@style/ELDViewer.TextAppearance.DriverDetails.large"
                                 android:text="TextView" />
 
                             <TextView
                                 android:id="@+id/licenseInfo"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:textAppearance="@style/ELDViewer.TextAppearance.DriverDetails.medium"
                                 android:text="TextView" />
 
                             <TextView
                                 android:id="@+id/eldUserName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:textAppearance="@style/ELDViewer.TextAppearance.DriverDetails.medium"
                                 android:text="TextView" />
                         </LinearLayout>
 
