@@ -3,11 +3,11 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
 
 android {
-    buildToolsVersion "26.0.1"
+    buildToolsVersion "26.0.2"
     compileSdkVersion 26
 
     defaultConfig {
-        applicationId "eld.eoinoc.com.eld_export_fileviewer"
+        applicationId "ie.bluetree.android.eldfileviewer"
         minSdkVersion 15
         targetSdkVersion 26
         vectorDrawables {
@@ -37,29 +37,46 @@ android {
 ext {
     supportLibVersion = "26.1.0"
     espressoVersion = "2.2.2"
-    androidTestVersion = "0.5"
+    androidTestVersion = "1.0.1"
     hamcrestVersion = "1.3"
     junitVersion = "4.12"
     jacksonDataFormatVersion = "2.9.3"
 }
 
 dependencies {
-    implementation 'com.android.support:support-v4:26.1.0'
-    implementation 'com.android.support:recyclerview-v7:26.1.0'
+
     kapt "com.android.databinding:compiler:2.3.2"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
 
     implementation "com.android.support:appcompat-v7:${supportLibVersion}"
-    implementation "com.android.support:cardview-v7:${supportLibVersion}"
     implementation "com.android.support:design:${supportLibVersion}"
     implementation "com.android.support:recyclerview-v7:${supportLibVersion}"
-    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-csv:${jacksonDataFormatVersion}"
-    implementation "com.opencsv:opencsv:4.0"
+    implementation "com.android.support.test.espresso:espresso-idling-resource:${espressoVersion}"
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    androidTestImplementation("com.android.support.test.espresso:espresso-core:${espressoVersion}") {
+        exclude module: "espresso-idling-resource"
+        exclude group: "com.android.support"
+    }
+
+    androidTestImplementation("com.android.support.test.espresso:espresso-contrib:${espressoVersion}") {
+        exclude module: "espresso-core"
+        exclude module: "recyclerview-v7"
+        exclude group: "com.android.support"
+    }
+
+    androidTestImplementation("com.android.support.test:rules:${androidTestVersion}") {
+        exclude group: "com.android.support"
+    }
+
+    androidTestImplementation("com.android.support.test:runner:${androidTestVersion}") {
+        exclude group: "com.android.support"
+    }
+
+    androidTestImplementation "org.hamcrest:hamcrest-core:${hamcrestVersion}"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }

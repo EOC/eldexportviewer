@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="eld.eoinoc.com.eld_export_fileviewer">
+    package="ie.bluetree.android">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Viewer">
-        <activity android:name="eld.eoinoc.com.activity.ELDCategorySelectionActivity">
+        <activity android:name="ie.bluetree.android.eldfileviewer.activity.ELDCategorySelectionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,7 +21,7 @@
                 <data android:pathPattern=".*\\.csv" />
             </intent-filter>
         </activity>
-        <activity android:name="eld.eoinoc.com.activity.ELDSectionActivity"></activity>
+        <activity android:name="ie.bluetree.android.eldfileviewer.activity.ELDSectionActivity"></activity>
     </application>
 
 </manifest>
